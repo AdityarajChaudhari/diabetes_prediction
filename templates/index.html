@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <title>Diabetes Prediction</title>
+</head>
+<body>
+    <div class="login" style="background-image: url('https://img.freepik.com/free-vector/clean-medical-background_53876-97927.jpg?size=626&ext=jpg');background-size: 100% 105%;">
+        <h1 style="text-align : center;background-color"><b>DIABETES PREDICTION</b></h1>
+        <form action="{{url_for ('predict')}}" method="post" style="text-align : center;">
+            <label style="font-size:27px;">Number of Pregnancies (0-17) -- </label>&nbsp;
+            <input type="number" name="Pregnancies" placeholder="No of Pregnancies" required="required" min="0" max="17" step="any" style="text-align : center;font-size : 20px;width : 375px"><br>
+            <br>
+            <label style="font-size:27px;">Glucose (44.00-199.00) -- </label>&nbsp;
+            <input type="number" name="Glucose" placeholder="Glucose" required="required" min="40.00" max="200.00" step="any" style="text-align : center;font-size : 20px;width : 375px"><br>
+            <br>
+            <label style="font-size:27px;">BloodPressure (24.00-122.00) -- </label>&nbsp;
+            <input type="number" name="BloodPressure" placeholder="BloodPressure" required="required" min="24.00" max="122.00" step="any" style="text-align : center;font-size : 20px;width : 375px"><br>
+            <br>
+            <label style="font-size:27px;">Skin Thickness (7.00-99.00) -- </label>&nbsp;
+            <input type="number" name="Skin Thickness" placeholder="Skin Thickness" required="required" min="7.00" max="100.00" step="any" style="text-align : center;font-size : 20px;width : 375px"><br>
+            <br>
+            <label style="font-size:27px;">Insulin (14.00-846.00) -- </label>&nbsp;
+            <input type="number" name="Insulin" placeholder="Insulin" required="required" min="14.00" max="846.00" step="any" style="text-align : center;font-size : 20px;width : 375px"><br>
+            <br>
+            <label style="font-size:27px;">Body Mass Index (18.20-67.10) -- </label>&nbsp;
+            <input type="number" name="BMI" placeholder="BMI" required="required" step="any" min="17.00" max="68.00" style="text-align : center;font-size : 20px;width : 375px"><br>
+            <br>
+            <label style="font-size:27px;">DiabetesPedigreeFunction (0.08-2.42) -- </label>&nbsp;
+            <input type="number" name="DiabetesPedigreeFunction" placeholder="DiabetesPedigreeFunction" min="0.05" max="2.50" required="required" step="any" style="text-align : center;font-size : 20px;width : 375px"">
+            <br><br>
+            <label style="font-size:27px;">Age (21-81) -- </label>&nbsp;
+            <input type="number" name="Age" placeholder="Age" required="required" step="any" min="20" max="85" style="text-align : center;font-size : 20px;width : 375px">
+            <br><br><br>
+
+            <button type="submit" style="font-size:30px;width : 750px ; background-color : white;" >Predict</button>
+            <br><br>
+            <button type= "reset"  style="font-size:30px;width : 750px ; background-color : white" >Reset</button>
+        </form>
+
+        <br>
+        <br>
+        <br>
+
+        <h1 style="text-align : center"><b>{{ prediction_text }}</b></h1>
+
+
+    </div>
+
+</body>
+</html>
